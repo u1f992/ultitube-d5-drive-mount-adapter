@@ -1,0 +1,35 @@
+[project]
+name = "ultitube-d5-drive-mount-adapter"
+version = "0.1.0"
+description = "CadQuery model of an adapter that mounts an Aqua Computer ULTITUBE D5 on a 2.5-inch drive position"
+readme = "README.md"
+authors = [
+    { name = "Koutaro Mukai", email = "mukai.k1011k@outlook.jp" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "cadquery>=2.8.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+]
+
+[project.scripts]
+ultitube-d5-drive-mount-adapter = "ultitube_d5_drive_mount_adapter:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "ruff>=0.17.5",
+]
+
+[tool.mypy]
+files = ["src"]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "mpl_toolkits.*"
+ignore_missing_imports = true
